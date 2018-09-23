@@ -1,0 +1,5 @@
+myNumbers=(
+    # Ide kell írni a megjátszott számokat a '#' jel nélkül, szelvényenként egy sorban, pl:
+    12 36 58 78 82
+    14 35 56 72 84
+)
