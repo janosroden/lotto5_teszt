@@ -53,7 +53,7 @@ Kiosztott nyeremények:
 EOF
     for i in {5..2}; do
         if [[ ${winerCounts[$i]} -ne 0 ]]; then
-            echo "   $i találatosből ${winerCounts[$i]} db, a nyeremény $(printCurrency ${winnings[$i]})"
+            echo "   $i találatosból ${winerCounts[$i]} db, a nyeremény $(printCurrency ${winnings[$i]})"
         fi
     done
 
