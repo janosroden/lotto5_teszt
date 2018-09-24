@@ -3,3 +3,6 @@ myNumbers=(
     12 36 58 78 82
     14 35 56 72 84
 )
+
+# Ide kell írni, hogy hányan játszanak együtt. Ha nem 1, akkor a program kiírja, hogy fejenként mennyi a nyeremény.
+numberOfPlayers=1

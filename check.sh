@@ -15,6 +15,9 @@ set -e
         [[ ${myNumbers[$i]} -le 0 || ${myNumbers[$i]} -gt 90 ]] && echo "A számoknak 1 és 90 között kell lenniük!" >&2 && exit 1
     done
 
+    # Check numberOfPlayers
+    [[ -z $numberOfPlayers ]] && numberOfPlayers=1
+    [[ $numberOfPlayers -le 0 ]] && echo "A numberOfPlayers-nek pozitív egész számnak kell lennie, ha definiálva van!" >&2 && exit 1
 
     latest="$(wget -qO - https://bet.szerencsejatek.hu/cmsfiles/otos.csv | head -1 | tr -d '\r')"
     # latest="$(date +%Y);$(date +%W);$(date +%Y.%m.%d.);0;0 Ft;34;1 592 600 Ft;2615;22 085 Ft;72302;1 745 Ft;14;28;30;52;84"
@@ -94,7 +97,12 @@ EOF
             totalWin=$[totalWin + win]
         done
 
-        echo "Összesen $(printCurrency $totalWin)"
+        echo -n "Összesen $(printCurrency $totalWin)"
+        if [[ $numberOfPlayers -gt 1 ]]; then
+            echo ", ami $numberOfPlayers részre osztva fejenként $(printCurrency $[totalWin / numberOfPlayers])"
+        else
+            echo
+        fi
     else
         echo "Sajnos ma nincs találat :("
     fi
