@@ -17,4 +17,5 @@ Synology NAS-on van tesztelve, az ottani beállítások:
   - állítsuk be, hogy kérünk email értesítést, de csak akkor, ha a futtatás hibával végződött
   - állítsuk be az e-mail címeket
   - a parancs: bash /var/services/homes/admin/lotto5_teszt/check.sh /var/services/homes/admin/lotto5_teszt/config /var/services/homes/admin/lotto5_teszt/
+  - fusson a script minden nap minden órában
   - módosítsuk aszerint, hogy hová tettük a scriptet
