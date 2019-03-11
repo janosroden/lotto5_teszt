@@ -107,7 +107,7 @@ EOF
             echo
         fi
     else
-        echo "Sajnos ma nincs találat :("
+        echo "Sajnos ma nincs nyeremény :("
     fi
 } > "$2/out.new"
 
